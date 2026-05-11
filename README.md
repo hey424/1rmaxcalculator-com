@@ -2,6 +2,8 @@
 
 Migration of 1rmaxcalculator.com from Hostinger Horizons (CSR React SPA) to Astro (SSG with real HTML output).
 
+> Git workflow live: edits land here via Cowork, commit & push via GitHub Desktop, Cloudflare auto-deploys.
+
 **Why:** the Horizons-built site ships only `<div id="root"></div>` in the initial HTML response, which Googlebot's first-pass crawler can't read. This Astro version produces real server-rendered HTML for every route, with proper `<a href>` nav links, meta tags, and content visible without executing JavaScript.
 
 ## Stack
