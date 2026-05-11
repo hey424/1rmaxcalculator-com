@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const title = 'Wilks Score Explained | 1rmaxcalculator.com';
+const description = 'What the Wilks Score is, how the formula works, what scores mean across competitive levels, and limitations (including the case for newer formulas like DOTS and IPF GL).';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Wilks Score Explained</h1>
+  <p>The Wilks Score is a coefficient-based system that lets you compare powerlifting totals across bodyweights. A 132-lb lifter pulling a 1000-lb total and a 308-lb lifter pulling a 1900-lb total can have meaningfully similar Wilks Scores.</p>
+
+  <h2>The formula</h2>
+  <p>The Wilks coefficient is computed from your bodyweight (BW in kg) using a fifth-degree polynomial:</p>
+  <p><code>coeff = 500 / (a + b&middot;BW + c&middot;BW&sup2; + d&middot;BW&sup3; + e&middot;BW&#8308; + f&middot;BW&#8309;)</code></p>
+  <p>The constants <em>a&ndash;f</em> differ for male and female lifters. Your Wilks Score is your total multiplied by this coefficient.</p>
+
+  <h2>What scores mean</h2>
+  <ul>
+    <li><strong>200&ndash;300:</strong> recreational lifter; first year or two of consistent training</li>
+    <li><strong>300&ndash;400:</strong> serious amateur; intermediate to advanced lifter</li>
+    <li><strong>400&ndash;500:</strong> elite amateur; regional or national competitive</li>
+    <li><strong>500&ndash;600:</strong> world-class competitive powerlifter</li>
+    <li><strong>600+:</strong> elite competitor; world records territory</li>
+  </ul>
+
+  <h2>Limitations</h2>
+  <p>The original Wilks formula was derived from data that's now several decades old and skewed toward middle-bodyweight male lifters. Critiques include:</p>
+  <ul>
+    <li>It tends to overweight the lightest bodyweight classes.</li>
+    <li>Female-male direct comparison is debated.</li>
+    <li>It doesn't account for equipment differences (raw vs. equipped).</li>
+  </ul>
+
+  <h2>Alternatives</h2>
+  <p>Newer formulas address some of the Wilks criticisms:</p>
+  <ul>
+    <li><strong>Wilks 2020:</strong> A revision that updates the coefficients based on more recent meet data.</li>
+    <li><strong>DOTS:</strong> A polynomial system favored in some federations; tends to be flatter across bodyweights.</li>
+    <li><strong>IPF GL Points:</strong> Used by the International Powerlifting Federation in raw and equipped meets; updated regularly.</li>
+  </ul>
+
+  <p>For most purposes, Wilks remains a useful quick comparison even if it's no longer the most technically defensible formula.</p>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Wilks Calculator — Score Your Lifts Against Bodyweight | 1rmaxcalculator.com';
+const description = 'Free Wilks Score calculator for powerlifting. Compare squat, bench, and deadlift totals fairly across bodyweight using the official Wilks formula.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Wilks Calculator</h1>
+  <p>The Wilks Score normalizes powerlifting totals across bodyweights so a 132-lb lifter and a 308-lb lifter can be compared fairly. This calculator uses the original Wilks coefficient formula.</p>
+
+  <h2>Calculate your Wilks Score</h2>
+  <p><em>The interactive calculator will load on first publish. For now, see the <a href="/guides/wilks-score-explained">Wilks score explained</a> guide for manual calculation and interpretation.</em></p>
+
+  <h2>What is the Wilks Score?</h2>
+  <p>The Wilks formula was developed in 1994 by Robert Wilks. It uses a polynomial regression on bodyweight to produce a coefficient that's multiplied by your total to yield a Wilks Score. Higher score = better lift relative to bodyweight.</p>
+
+  <h2>Typical scores</h2>
+  <ul>
+    <li><strong>200&ndash;300:</strong> recreational lifter</li>
+    <li><strong>300&ndash;400:</strong> serious amateur</li>
+    <li><strong>400&ndash;500:</strong> elite amateur / regional competitive</li>
+    <li><strong>500+:</strong> world-class competitive powerlifter</li>
+  </ul>
+
+  <p>Note that "Wilks 2020" (a newer revision) is also used in some federations. We use the original 1994 formula unless you select Wilks 2020 in the calculator above.</p>
+</BaseLayout>

@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'One Rep Max Calculator — Calculate Your 1RM | 1rmaxcalculator.com';
+const description = 'Free one rep max calculator for squat, bench, deadlift, and overhead press. Uses Brzycki, Epley, Lombardi, and O\'Conner formulas with an averaged 1RM estimate. Includes percentage-based training table.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>One Rep Max Calculator</h1>
+  <p>Estimate your one rep max from a sub-maximal lift. Enter the weight you lifted and the number of reps; we'll show you what your 1RM is likely to be using four well-established formulas (Brzycki, Epley, Lombardi, and O'Conner) and an averaged result.</p>
+
+  <section aria-labelledby="calculator-heading">
+    <h2 id="calculator-heading">Calculate your 1RM</h2>
+    <noscript>
+      <p><strong>Note:</strong> the interactive calculator requires JavaScript. With JavaScript disabled, you can still calculate your 1RM manually using the Epley formula: <code>1RM = weight &times; (1 + reps &divide; 30)</code>.</p>
+    </noscript>
+    <div id="calculator-island">
+      <form class="calc-form" data-pilot-placeholder>
+        <label>
+          Weight lifted (lbs)
+          <input type="number" min="1" step="0.5" placeholder="225" />
+        </label>
+        <label>
+          Reps performed
+          <input type="number" min="1" max="20" step="1" placeholder="5" />
+        </label>
+        <button type="button">Calculate (interactive version loads with JS)</button>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <h2>How the 1RM formulas work</h2>
+    <p>A one rep max is the maximum amount of weight you can lift for a single repetition. Most lifters don't max out in training because it's high-risk and time-consuming. Instead, you estimate your 1RM from a heavier-but-still-multi-rep set.</p>
+    <p>The four formulas this calculator averages all model the relationship between reps and percentage of 1RM. They were derived from empirical data collected in the 1980s and 1990s and remain accurate within roughly 5&ndash;10% for trained lifters performing under 10 reps.</p>
+    <p>Read the full <a href="/methodology">methodology</a> for formula details and accuracy caveats.</p>
+  </section>
+
+  <section>
+    <h2>Use your 1RM for training</h2>
+    <p>Once you know your 1RM, you can program your training around percentages. Common ranges:</p>
+    <ul>
+      <li><strong>50&ndash;65%</strong> &mdash; technique work, high reps, recovery</li>
+      <li><strong>65&ndash;80%</strong> &mdash; hypertrophy and general strength, 5&ndash;10 reps</li>
+      <li><strong>80&ndash;90%</strong> &mdash; strength building, 3&ndash;6 reps</li>
+      <li><strong>90&ndash;100%</strong> &mdash; peak strength, singles and doubles</li>
+    </ul>
+    <p>For deeper coverage see our guides on <a href="/guides/percentage-based-programming">percentage-based programming</a> and <a href="/guides/peaking-block-strength">peaking blocks for strength</a>.</p>
+  </section>
+
+  <section>
+    <h2>Other calculators on this site</h2>
+    <ul>
+      <li><a href="/wilks-calculator">Wilks Calculator</a> &mdash; score your raw lifts against bodyweight</li>
+      <li><a href="/powerlifting-total-calculator">Powerlifting Total Calculator</a> &mdash; squat + bench + deadlift</li>
+      <li><a href="/macro-calculator">Macro Calculator</a> &mdash; protein, carbs, fats for strength goals</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Recent guides</h2>
+    <ul>
+      <li><a href="/guides/how-to-test-1rm-safely">How to test your 1RM safely</a></li>
+      <li><a href="/guides/percentage-based-programming">Percentage-based programming</a></li>
+      <li><a href="/guides/peaking-block-strength">Peaking blocks for strength</a></li>
+      <li><a href="/guides/wilks-score-explained">Wilks score explained</a></li>
+    </ul>
+  </section>
+
+  <style>
+    .calc-form {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 400px;
+      margin: 1rem 0;
+    }
+    .calc-form label {
+      display: grid;
+      gap: 0.25rem;
+      font-size: 0.95rem;
+    }
+    .calc-form input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+    }
+    .calc-form button {
+      padding: 0.6rem 1rem;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  </style>
+</BaseLayout>

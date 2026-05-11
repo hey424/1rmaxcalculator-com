@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'FAQ | 1rmaxcalculator.com';
+const description = 'Frequently asked questions about one rep max calculation: which formula is most accurate, how often to test, training applications, and more.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Frequently Asked Questions</h1>
+
+  <h2>Which 1RM formula is most accurate?</h2>
+  <p>For most trained lifters under 10 reps, all four formulas (Brzycki, Epley, Lombardi, O'Conner) fall within ~10% of each other. We average them precisely because no single formula is best across all rep ranges, body types, and lifts. See our <a href="/methodology">methodology page</a> for formula details.</p>
+
+  <h2>Should I actually test my 1RM?</h2>
+  <p>Most lifters don't need to. Estimated 1RMs are accurate enough for programming, and direct testing carries injury risk. If you're competing in powerlifting or need a precise number, the rules of your federation will dictate testing. See <a href="/guides/how-to-test-1rm-safely">How to test your 1RM safely</a>.</p>
+
+  <h2>How often should I recalculate?</h2>
+  <p>For an active training program, recalculating every 4&ndash;8 weeks based on your heaviest recent set is reasonable. Avoid recalculating after a single PR set &mdash; one good day doesn't establish a new baseline.</p>
+
+  <h2>Why are the four formulas giving different answers?</h2>
+  <p>Each formula was derived from a different dataset and uses a slightly different mathematical relationship between reps and percentage of 1RM. The averaged result reduces the impact of any single formula's bias.</p>
+
+  <h2>Does this calculator work for all lifts?</h2>
+  <p>The formulas were calibrated on squat, bench press, and deadlift data. Predictions are most accurate for those lifts. For overhead press, rows, and other compound lifts, expect slightly wider error margins. For isolation movements, 1RM estimation is generally unreliable.</p>
+
+  <h2>Why is the calculator showing different results for the same input on different sites?</h2>
+  <p>Different sites use different combinations of formulas (some use only Epley, some weight Brzycki higher, etc.). We use a straight average of four standard formulas. The differences are typically small (within 5%) but can matter at the high end of the rep range.</p>
+</BaseLayout>

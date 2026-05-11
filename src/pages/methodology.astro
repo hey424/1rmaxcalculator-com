@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Methodology — How We Calculate 1RM | 1rmaxcalculator.com';
+const description = 'The 1RM formulas we use (Brzycki, Epley, Lombardi, O\'Conner), why we average them, accuracy expectations, and the strength research behind each.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Methodology</h1>
+  <p>Our one rep max calculator averages four formulas published in strength research literature. Each formula models the relationship between submaximal load, reps performed, and 1RM. None is perfectly accurate &mdash; averaging multiple reduces the error from any single model.</p>
+
+  <h2>The four formulas</h2>
+  <h3>Brzycki (1993)</h3>
+  <p><code>1RM = weight &divide; (1.0278 &minus; 0.0278 &times; reps)</code></p>
+  <p>Conservative at higher rep counts; widely used in NSCA materials.</p>
+
+  <h3>Epley (1985)</h3>
+  <p><code>1RM = weight &times; (1 + reps &divide; 30)</code></p>
+  <p>Most commonly cited general-purpose formula; simple linear relationship.</p>
+
+  <h3>Lombardi (1989)</h3>
+  <p><code>1RM = weight &times; reps^0.1</code></p>
+  <p>Power-curve model; tends to predict slightly higher than Brzycki and Epley at moderate rep counts.</p>
+
+  <h3>O'Conner (1989)</h3>
+  <p><code>1RM = weight &times; (1 + reps &divide; 40)</code></p>
+  <p>Conservative linear model; lower predictions especially at higher reps.</p>
+
+  <h2>Accuracy expectations</h2>
+  <p>For trained lifters performing fewer than 10 reps with good technique, predicted 1RMs typically fall within 5&ndash;10% of an actual tested 1RM. Accuracy decreases as rep counts climb above 10 because the formulas were calibrated on lower-rep data and because metabolic fatigue dominates at higher rep ranges.</p>
+
+  <p>If you're new to lifting, expect the predicted 1RM to be a less reliable target. Build up gradually rather than treating a calculated number as your true maximum.</p>
+
+  <h2>What we don't model</h2>
+  <p>Bodyweight, age, sex, training history, lift biomechanics, fatigue, and equipment all affect actual maximum strength. The formulas treat the relationship as universal, which it isn't. Use the result as a planning estimate, not a prescription.</p>
+
+  <p>See <a href="/guides/how-to-test-1rm-safely">How to test your 1RM safely</a> for direct testing recommendations.</p>
+</BaseLayout>

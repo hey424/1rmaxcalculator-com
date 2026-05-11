@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Macro Calculator for Strength Athletes | 1rmaxcalculator.com';
+const description = 'Free macro calculator for strength athletes. Get daily protein, carbohydrate, and fat targets based on bodyweight, training volume, and goals (bulk, cut, maintain).';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Macro Calculator for Strength Athletes</h1>
+  <p>Calculate daily protein, carbohydrate, and fat targets based on your bodyweight, training intensity, and goal. Built specifically for strength athletes rather than general weight-loss apps.</p>
+
+  <h2>Calculate your macros</h2>
+  <p><em>The interactive calculator will load on first publish.</em></p>
+
+  <h2>How we set targets</h2>
+  <ul>
+    <li><strong>Protein:</strong> 0.7&ndash;1.0 g/lb bodyweight, scaled by training intensity.</li>
+    <li><strong>Fat:</strong> 0.3&ndash;0.5 g/lb bodyweight, minimum 50 g/day for hormone support.</li>
+    <li><strong>Carbohydrate:</strong> remaining calories after protein and fat targets.</li>
+  </ul>
+
+  <h2>Calorie targets by goal</h2>
+  <ul>
+    <li><strong>Bulk:</strong> +250 to +500 cal/day above maintenance</li>
+    <li><strong>Maintain:</strong> at maintenance</li>
+    <li><strong>Cut:</strong> &minus;500 to &minus;750 cal/day below maintenance</li>
+  </ul>
+
+  <p>These are starting estimates. Adjust based on weekly bodyweight trends &mdash; if your scale isn't moving in the expected direction over 2&ndash;3 weeks, adjust calories by 10&ndash;15%.</p>
+</BaseLayout>

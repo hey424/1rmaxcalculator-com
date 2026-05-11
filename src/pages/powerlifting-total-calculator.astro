@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Powerlifting Total Calculator | 1rmaxcalculator.com';
+const description = 'Free powerlifting total calculator. Add your best squat, bench, and deadlift to get your competition total, then convert to Wilks for cross-bodyweight comparison.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Powerlifting Total Calculator</h1>
+  <p>Your powerlifting total is the sum of your best squat, bench press, and deadlift. This is the number that determines placing in meet competition.</p>
+
+  <h2>Calculate your total</h2>
+  <p><em>The interactive calculator will load on first publish.</em></p>
+
+  <h2>How meet totals work</h2>
+  <p>In a sanctioned powerlifting meet you get three attempts at each lift. Your highest successful attempt at each counts toward your total. A "bomb out" (failing all three attempts) at any lift means no total &mdash; you don't place.</p>
+
+  <h2>Comparing across weight classes</h2>
+  <p>A raw total doesn't tell you how strong someone is relative to bodyweight. For cross-weight comparison, use the <a href="/wilks-calculator">Wilks Calculator</a> or DOTS, IPF GL, or other coefficient-based scores. See the <a href="/guides/wilks-score-explained">Wilks score explained</a> guide for more detail.</p>
+</BaseLayout>
