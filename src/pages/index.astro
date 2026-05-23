@@ -6,7 +6,7 @@ const description = 'Free one rep max calculator for squat, bench, deadlift, and
 ---
 <BaseLayout title={title} description={description}>
   <h1>One Rep Max Calculator</h1>
-  <p>Estimate your one rep max from a sub-maximal lift. Enter the weight you lifted and the number of reps; we'll show you what your 1RM is likely to be using four well-established formulas (Brzycki, Epley, Lombardi, and O'Conner) and an averaged result.</p>
+  <p>Estimate your one rep max from a submaximal lift. Enter the weight you lifted and the number of reps you performed; the calculator applies four validated research formulas (Brzycki, Epley, Lombardi, and O'Conner) and returns an averaged 1RM estimate along with individual formula outputs. Use the result to set training percentages for your next programming cycle.</p>
 
   <section aria-labelledby="calculator-heading">
     <h2 id="calculator-heading">Calculate your 1RM</h2>
@@ -30,21 +30,24 @@ const description = 'Free one rep max calculator for squat, bench, deadlift, and
 
   <section>
     <h2>How the 1RM formulas work</h2>
-    <p>A one rep max is the maximum amount of weight you can lift for a single repetition. Most lifters don't max out in training because it's high-risk and time-consuming. Instead, you estimate your 1RM from a heavier-but-still-multi-rep set.</p>
-    <p>The four formulas this calculator averages all model the relationship between reps and percentage of 1RM. They were derived from empirical data collected in the 1980s and 1990s and remain accurate within roughly 5&ndash;10% for trained lifters performing under 10 reps.</p>
-    <p>Read the full <a href="/methodology">methodology</a> for formula details and accuracy caveats.</p>
+    <p>A one rep max is the maximum weight you can lift for a single repetition with good technique. Most lifters don't test a true maximum in regular training — it's physically demanding, carries injury risk, and isn't necessary for effective programming. Instead, you perform a submaximal set (typically 3–6 reps at a challenging weight) and use a formula to estimate where your 1RM sits.</p>
+    <p>The four formulas this calculator averages — Brzycki (1993), Epley (1985), Lombardi (1989), and O'Conner (1989) — each model the relationship between submaximal reps and 1RM using empirical data from trained athletes. They were derived from strength research conducted in the 1980s and 1990s and remain accurate within roughly 5–10% for trained lifters performing fewer than 10 reps with good technique. Above 10 reps, all four formulas become less reliable as metabolic fatigue becomes the primary performance limiter rather than pure muscle strength.</p>
+    <p>Averaging four formulas rather than using one reduces the impact of any single formula's systematic bias for different rep ranges, body types, and lifting styles. If all four formulas produce tightly clustered outputs (within 5–10 lbs), the estimate is reliable. If they diverge significantly, perform a set closer to your true maximum for a better input.</p>
+    <p>Read the full <a href="/methodology">methodology page</a> for formula derivations, accuracy expectations by rep range, and conditions where estimates are reliable or not.</p>
   </section>
 
   <section>
-    <h2>Use your 1RM for training</h2>
-    <p>Once you know your 1RM, you can program your training around percentages. Common ranges:</p>
+    <h2>Use your 1RM for percentage-based training</h2>
+    <p>Once you have a reliable 1RM estimate, you can program every training session as a percentage of that number — the foundation of how most intermediate and advanced strength programs work. Common training zones:</p>
     <ul>
-      <li><strong>50&ndash;65%</strong> &mdash; technique work, high reps, recovery</li>
-      <li><strong>65&ndash;80%</strong> &mdash; hypertrophy and general strength, 5&ndash;10 reps</li>
-      <li><strong>80&ndash;90%</strong> &mdash; strength building, 3&ndash;6 reps</li>
-      <li><strong>90&ndash;100%</strong> &mdash; peak strength, singles and doubles</li>
+      <li><strong>50&ndash;65%</strong> &mdash; warm-up, technique work, recovery days, high-rep conditioning</li>
+      <li><strong>65&ndash;75%</strong> &mdash; hypertrophy, 6–12 reps, volume accumulation</li>
+      <li><strong>75&ndash;85%</strong> &mdash; strength development, 3–6 reps</li>
+      <li><strong>85&ndash;92%</strong> &mdash; heavy strength, near-maximal singles and doubles</li>
+      <li><strong>92&ndash;100%</strong> &mdash; peak singles, competition openers, max testing</li>
     </ul>
-    <p>For deeper coverage see our guides on <a href="/guides/percentage-based-programming">percentage-based programming</a> and <a href="/guides/peaking-block-strength">peaking blocks for strength</a>.</p>
+    <p>Most programs use a <em>training max</em> — typically 90% of your estimated 1RM — as the denominator for all percentage calculations. This builds in a buffer for the estimate's margin of error and day-to-day performance variability. If your 5/3/1 "1RM" is 315 lbs, your actual calculator estimate is likely around 350 lbs; programming to 90% of 350 (315) is the right approach rather than programming to 100% of a potentially inflated number.</p>
+    <p>For deeper coverage of percentage zones, weekly session structure, and periodization, see our <a href="/guides/percentage-based-programming">percentage-based programming guide</a>. For structuring a 4–8 week peak toward a new maximum, see <a href="/guides/peaking-block-strength">peaking blocks for strength</a>.</p>
   </section>
 
   <section>

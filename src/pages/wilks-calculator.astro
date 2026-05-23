@@ -5,21 +5,45 @@ const description = 'Free Wilks Score calculator for powerlifting. Compare squat
 ---
 <BaseLayout title={title} description={description}>
   <h1>Wilks Calculator</h1>
-  <p>The Wilks Score normalizes powerlifting totals across bodyweights so a 132-lb lifter and a 308-lb lifter can be compared fairly. This calculator uses the original Wilks coefficient formula.</p>
+  <p><em>Reviewed by Marcus Reeve (MR), Editor-in-Chief &amp; Strength Programming Lead. Updated May 2026.</em></p>
+
+  <p>The Wilks Score normalizes powerlifting totals across bodyweights so a 132-lb lifter and a 308-lb lifter can be compared on a common scale. Without a normalized score, heavier lifters always win total-based comparisons by virtue of their size advantage — Wilks adjusts for that to identify who is strongest relative to their bodyweight.</p>
 
   <h2>Calculate your Wilks Score</h2>
   <p><em>The interactive calculator will load on first publish. For now, see the <a href="/guides/wilks-score-explained">Wilks score explained</a> guide for manual calculation and interpretation.</em></p>
 
   <h2>What is the Wilks Score?</h2>
-  <p>The Wilks formula was developed in 1994 by Robert Wilks. It uses a polynomial regression on bodyweight to produce a coefficient that's multiplied by your total to yield a Wilks Score. Higher score = better lift relative to bodyweight.</p>
+  <p>The Wilks formula was developed by Robert Wilks, an Australian powerlifter and statistician, in 1994. The formula uses a fifth-degree polynomial regression applied to the lifter's bodyweight to generate a coefficient. Multiplying your powerlifting total (in kg) by that coefficient yields your Wilks Score. The coefficient is higher for lighter lifters and lower for heavier ones, compensating for the natural relationship between bodyweight and absolute strength capacity.</p>
+  <p>Wilks became the dominant normalized scoring system in powerlifting through the 2000s and 2010s because it was the first formula to gain widespread adoption and because it was computationally tractable before digital scoring systems existed. Most meet directors, coaches, and lifters still recognize Wilks as the benchmark even as newer formulas have emerged.</p>
 
-  <h2>Typical scores</h2>
+  <h2>How the coefficient is calculated</h2>
+  <p>The Wilks coefficient uses the following structure:</p>
+  <p><code>coefficient = 500 / (a + b&middot;BW + c&middot;BW&sup2; + d&middot;BW&sup3; + e&middot;BW&#8308; + f&middot;BW&#8309;)</code></p>
+  <p>Where BW is bodyweight in kilograms and the constants a through f are different for male and female lifters (the female constants produce higher coefficients at equivalent bodyweights, reflecting the different strength-to-bodyweight relationship between sexes). Your Wilks Score is then your total (in kg) multiplied by the coefficient.</p>
+  <p>A full derivation and the actual constant values for each sex are documented in our <a href="/guides/wilks-score-explained">Wilks score explained guide</a>.</p>
+
+  <h2>What scores mean — competitive benchmarks</h2>
+  <p>Wilks scores provide context for where a lifter sits relative to the broader competitive spectrum:</p>
   <ul>
-    <li><strong>200&ndash;300:</strong> recreational lifter</li>
-    <li><strong>300&ndash;400:</strong> serious amateur</li>
-    <li><strong>400&ndash;500:</strong> elite amateur / regional competitive</li>
-    <li><strong>500+:</strong> world-class competitive powerlifter</li>
+    <li><strong>200–300:</strong> Recreational lifter. Typically the first year or two of consistent training with compound lifts. A 300 Wilks is achievable for most people who train consistently for 2–3 years.</li>
+    <li><strong>300–400:</strong> Serious amateur. Intermediate to advanced recreational lifter. This range spans lifters who train hard and consistently but haven't pursued competition seriously.</li>
+    <li><strong>400–500:</strong> Elite amateur. Regional or national competitive level. Lifters in this range are genuinely strong by any standard and typically have several years of focused powerlifting-style training.</li>
+    <li><strong>500–600:</strong> World-class competitive powerlifter. National and international competition level. This range typically requires elite genetics, many years of serious training, and usually competitive focus on powerlifting specifically.</li>
+    <li><strong>600+:</strong> All-time elite. World record territory for raw lifters. A small number of lifters in the world compete at this level.</li>
   </ul>
+  <p>These benchmarks apply to raw lifting. Equipped totals are higher and produce higher Wilks Scores at equivalent competitive standing — a 500 Wilks in equipped lifting is a different achievement than a 500 Wilks in raw.</p>
 
-  <p>Note that "Wilks 2020" (a newer revision) is also used in some federations. We use the original 1994 formula unless you select Wilks 2020 in the calculator above.</p>
+  <h2>Wilks vs. newer scoring systems</h2>
+  <p>The original 1994 Wilks formula has been criticized for certain biases — specifically that it over-rewards lighter weight classes and was calibrated on older competitive data that may not reflect the current state of the sport. Several alternatives have been developed:</p>
+  <ul>
+    <li><strong>Wilks 2020:</strong> A revision developed by the same originator that updates the polynomial coefficients based on more recent competition data. Produces somewhat different results than original Wilks, particularly at extreme bodyweights. Some federations have adopted Wilks 2020 as their standard.</li>
+    <li><strong>DOTS Score:</strong> A polynomial-based system developed as an alternative to Wilks with the goal of producing flatter, more equitable comparisons across the bodyweight spectrum. Used by some federations as their primary ranking metric.</li>
+    <li><strong>IPF GL Points:</strong> The International Powerlifting Federation's current official scoring system for best lifter awards at IPF-affiliated meets (including USAPL). IPF GL is updated periodically based on current elite competition data and is considered more technically current than the original Wilks. If you compete in USAPL or other IPF affiliates, IPF GL is the score that matters for best lifter awards.</li>
+  </ul>
+  <p>For informal comparisons, personal goal-setting, and most non-IPF meets, original Wilks remains the most universally understood benchmark. For IPF competition, use IPF GL Points. For benchmarking your progress against all-time greats, original Wilks is still the most commonly referenced historical standard because decades of meet records use it.</p>
+
+  <h2>Using Wilks for goal setting</h2>
+  <p>A Wilks score gives you a bodyweight-independent strength target. Instead of saying "I want to total 1,500 lbs," you can say "I want to hit a 400 Wilks" — and that goal means the same thing whether you're competing at 148 lbs or 220 lbs. This is especially useful for lifters who change weight classes over time or who want to compare their progress to historical lifters at different bodyweights. A 350 Wilks is a 350 Wilks regardless of how it was achieved.</p>
+
+  <p>Return to the <a href="/">1RM calculator</a>, calculate your <a href="/powerlifting-total-calculator">powerlifting total</a>, or read the full <a href="/guides/wilks-score-explained">Wilks score explained guide</a>.</p>
 </BaseLayout>

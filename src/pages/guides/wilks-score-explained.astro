@@ -1,41 +1,70 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const title = 'Wilks Score Explained | 1rmaxcalculator.com';
-const description = 'What the Wilks Score is, how the formula works, what scores mean across competitive levels, and limitations (including the case for newer formulas like DOTS and IPF GL).';
+const description = 'What the Wilks Score is, how the formula works, what scores mean across competitive levels, and limitations — including the case for newer formulas like DOTS and IPF GL.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Wilks Score Explained</h1>
-  <p>The Wilks Score is a coefficient-based system that lets you compare powerlifting totals across bodyweights. A 132-lb lifter pulling a 1000-lb total and a 308-lb lifter pulling a 1900-lb total can have meaningfully similar Wilks Scores.</p>
+  <p><em>Reviewed by Marcus Reeve (MR), Editor-in-Chief &amp; Strength Programming Lead. Updated May 2026.</em></p>
 
-  <h2>The formula</h2>
-  <p>The Wilks coefficient is computed from your bodyweight (BW in kg) using a fifth-degree polynomial:</p>
-  <p><code>coeff = 500 / (a + b&middot;BW + c&middot;BW&sup2; + d&middot;BW&sup3; + e&middot;BW&#8308; + f&middot;BW&#8309;)</code></p>
-  <p>The constants <em>a&ndash;f</em> differ for male and female lifters. Your Wilks Score is your total multiplied by this coefficient.</p>
+  <p>The Wilks Score is a coefficient-based normalization system that makes powerlifting totals comparable across bodyweights. Without it, a raw total comparison between a 132-lb lifter and a 308-lb lifter is meaningless — heavier lifters have a structural advantage in absolute strength that makes direct total comparison unfair. Wilks adjusts for bodyweight to identify who is strongest <em>relative to their size</em>.</p>
 
-  <h2>What scores mean</h2>
+  <h2>Background: why normalized scores exist</h2>
+  <p>Absolute strength scales with bodyweight in a nonlinear way. Heavier athletes can lift absolutely more weight, but not proportionally more — a lifter who weighs twice as much does not lift twice as much. The relationship between bodyweight and strength capacity is curved, not linear, which means simple ratio methods (like dividing total by bodyweight) don't accurately normalize across the bodyweight spectrum. The lightest lifters appear disproportionately strong under ratio methods; the heaviest appear weak. Polynomial normalization formulas like Wilks attempt to model this nonlinear curve accurately.</p>
+  <p>Robert Wilks developed the original formula in 1994 using regression analysis on competitive powerlifting meet data from that era. The resulting polynomial fit produced a coefficient that, when multiplied by a lifter's total, generates a score roughly equalized across bodyweights. The formula became the standard for best-lifter awards and cross-weight-class comparison throughout the late 1990s and 2000s.</p>
+
+  <h2>The Wilks formula in detail</h2>
+  <p>The Wilks coefficient is computed from bodyweight (BW in kilograms) using a fifth-degree polynomial:</p>
+  <p><code>coefficient = 500 / (a + b&middot;BW + c&middot;BW&sup2; + d&middot;BW&sup3; + e&middot;BW&#8308; + f&middot;BW&#8309;)</code></p>
+
+  <p>The constants differ by sex. For male lifters:</p>
   <ul>
-    <li><strong>200&ndash;300:</strong> recreational lifter; first year or two of consistent training</li>
-    <li><strong>300&ndash;400:</strong> serious amateur; intermediate to advanced lifter</li>
-    <li><strong>400&ndash;500:</strong> elite amateur; regional or national competitive</li>
-    <li><strong>500&ndash;600:</strong> world-class competitive powerlifter</li>
-    <li><strong>600+:</strong> elite competitor; world records territory</li>
+    <li>a = &minus;216.0475144</li>
+    <li>b = 16.2606339</li>
+    <li>c = &minus;0.002388645</li>
+    <li>d = &minus;0.00113732</li>
+    <li>e = 7.01863E&minus;06</li>
+    <li>f = &minus;1.291E&minus;08</li>
+  </ul>
+  <p>For female lifters, different constants are used that produce higher coefficients at equivalent bodyweights, reflecting the different absolute-strength-to-bodyweight relationship between sexes in competitive powerlifting data.</p>
+  <p>Your Wilks Score is simply: <strong>Wilks Score = total (in kg) &times; coefficient</strong>. To convert your total from pounds to kilograms, divide by 2.2046. Our <a href="/wilks-calculator">Wilks calculator</a> handles all unit conversions automatically.</p>
+
+  <h2>What Wilks scores mean — competitive levels</h2>
+  <p>The following benchmarks reflect raw (no supportive equipment) powerlifting performance. Equipped totals are higher and produce higher Wilks Scores at equivalent competitive standing:</p>
+  <ul>
+    <li><strong>200–300:</strong> Recreational lifter. Typically the first 1–2 years of consistent compound barbell training. Most people who begin strength training and stay consistent will pass 200 Wilks within their first 6–12 months.</li>
+    <li><strong>300–400:</strong> Serious amateur / intermediate to advanced lifter. This range includes people who train hard, consistently, and with good programming, but haven't specifically competed or pursued competition-level development.</li>
+    <li><strong>400–500:</strong> Elite amateur / competitive powerlifter. Regional and national competitive level in most federations. Lifters in this range have typically been training specifically for powerlifting for several years and compete regularly.</li>
+    <li><strong>500–600:</strong> World-class competitive powerlifter. National and international competition level. A small percentage of the overall powerlifting population competes at this level. Elite genetics, years of focused training, and professional-level programming support are typical requirements.</li>
+    <li><strong>600+:</strong> All-time elite. World record territory for raw lifters. Only a handful of lifters in any generation reach this level.</li>
+  </ul>
+  <p>Female lifters: these benchmarks apply qualitatively, but the absolute totals and coefficients are different. A female lifter and a male lifter with the same Wilks Score are performing at approximately equivalent levels relative to their competitive populations, which is the point of the normalization.</p>
+
+  <h2>Limitations of the original Wilks formula</h2>
+  <p>The Wilks formula has faced well-documented criticism since its adoption. The most significant limitations:</p>
+  <ul>
+    <li><strong>Calibrated on 1990s data.</strong> The polynomial regression was fit to competitive data from the early 1990s. The sport has evolved significantly since then — training methods, nutritional understanding, and the competitive performance distribution have all shifted. The formula may not accurately reflect the current strength-to-bodyweight distribution at elite levels.</li>
+    <li><strong>Over-rewards lighter weight classes.</strong> Empirical analysis of modern meet data has shown that lower bodyweight classes tend to produce higher Wilks Scores on average than heavier classes, indicating the formula does not perfectly equalize across the spectrum. In best-lifter competitions, lighter lifters have a statistical advantage under original Wilks.</li>
+    <li><strong>Female coefficient debate.</strong> The female constants were derived from a smaller competitive dataset and have been questioned for their ability to accurately normalize female performance, particularly at the lighter bodyweight classes.</li>
+    <li><strong>No equipment adjustment.</strong> The formula does not distinguish between raw and equipped lifts, which produce entirely different performance distributions. Comparing a raw Wilks to an equipped Wilks is not meaningful even at the same score.</li>
   </ul>
 
-  <h2>Limitations</h2>
-  <p>The original Wilks formula was derived from data that's now several decades old and skewed toward middle-bodyweight male lifters. Critiques include:</p>
+  <h2>Alternatives to original Wilks</h2>
+  <p>Several newer formulas have been developed to address the limitations of the 1994 Wilks. Each has its own tradeoffs:</p>
   <ul>
-    <li>It tends to overweight the lightest bodyweight classes.</li>
-    <li>Female-male direct comparison is debated.</li>
-    <li>It doesn't account for equipment differences (raw vs. equipped).</li>
+    <li><strong>Wilks 2020:</strong> A revised version of the original formula developed by Robert Wilks and colleagues using more recent competitive data. Produces somewhat different coefficients, particularly at the extreme bodyweight ends. Some federations have adopted Wilks 2020 as their official scoring system. The revision doesn't fundamentally change the methodology — it updates the polynomial constants.</li>
+    <li><strong>DOTS Score:</strong> Developed as an alternative to Wilks using a similar polynomial approach but calibrated to produce a flatter distribution across bodyweight classes. DOTS tends to equalize the bodyweight advantage more evenly and has been adopted by some federations as their standard. It's less universally recognized than Wilks but is considered more technically equitable by many analysts.</li>
+    <li><strong>IPF GL Points (Goodlift Points):</strong> The International Powerlifting Federation's current official scoring system, used for best-lifter awards at all IPF-sanctioned meets including USAPL, CPU, and other national affiliates. IPF GL is updated regularly as new elite competition data becomes available. For USAPL competition, IPF GL is the score that matters — not original Wilks.</li>
   </ul>
 
-  <h2>Alternatives</h2>
-  <p>Newer formulas address some of the Wilks criticisms:</p>
+  <h2>Which score should you use?</h2>
+  <p>The practical answer depends on context:</p>
   <ul>
-    <li><strong>Wilks 2020:</strong> A revision that updates the coefficients based on more recent meet data.</li>
-    <li><strong>DOTS:</strong> A polynomial system favored in some federations; tends to be flatter across bodyweights.</li>
-    <li><strong>IPF GL Points:</strong> Used by the International Powerlifting Federation in raw and equipped meets; updated regularly.</li>
+    <li><strong>For personal goal-setting and progress tracking:</strong> Original Wilks is fine. The limitations matter more at the elite level where best-lifter calculations are at stake. For setting a "I want to hit 350 Wilks" goal, original Wilks gives you a useful, universally understood benchmark.</li>
+    <li><strong>For USAPL or other IPF-affiliated competition:</strong> Use IPF GL Points for any scoring that actually matters at your meets. Original Wilks won't be used for best-lifter awards at these meets.</li>
+    <li><strong>For historical comparison:</strong> Original Wilks has decades of meet records calculated in it. Comparing yourself to all-time great powerlifters from the 1990s and 2000s is easiest using original Wilks because that's what their records were recorded in.</li>
+    <li><strong>For inter-federation comparison:</strong> Be cautious. Different federations use different scoring systems and weight class structures. A 450 Wilks in one federation may not correspond precisely to a 450 IPF GL in another, and the weight class boundaries differ between organizations.</li>
   </ul>
 
-  <p>For most purposes, Wilks remains a useful quick comparison even if it's no longer the most technically defensible formula.</p>
+  <p>Use our <a href="/wilks-calculator">Wilks calculator</a> to compute your score from your total and bodyweight. To build the total that determines your Wilks, see the <a href="/powerlifting-total-calculator">powerlifting total calculator</a>.</p>
 </BaseLayout>

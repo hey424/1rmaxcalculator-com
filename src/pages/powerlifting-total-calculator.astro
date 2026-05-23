@@ -5,14 +5,47 @@ const description = 'Free powerlifting total calculator. Add your best squat, be
 ---
 <BaseLayout title={title} description={description}>
   <h1>Powerlifting Total Calculator</h1>
-  <p>Your powerlifting total is the sum of your best squat, bench press, and deadlift. This is the number that determines placing in meet competition.</p>
+  <p><em>Reviewed by Marcus Reeve (MR), Editor-in-Chief &amp; Strength Programming Lead. Updated May 2026.</em></p>
+
+  <p>Your powerlifting total is the sum of your best squat, bench press, and deadlift in a competition or training session. This is the number that determines placing in meet competition across weight classes — a higher total beats a lower total within your weight class and equipment division.</p>
 
   <h2>Calculate your total</h2>
   <p><em>The interactive calculator will load on first publish.</em></p>
 
-  <h2>How meet totals work</h2>
-  <p>In a sanctioned powerlifting meet you get three attempts at each lift. Your highest successful attempt at each counts toward your total. A "bomb out" (failing all three attempts) at any lift means no total &mdash; you don't place.</p>
+  <h2>How powerlifting meet totals work</h2>
+  <p>In a sanctioned powerlifting meet, you receive three attempts at each lift in sequence: squats, then bench press, then deadlift. Your highest successful attempt at each lift counts toward your total. The meet total is the sum of those three numbers.</p>
+  <p>A "bomb out" — failing all three attempts at any single lift — means you have no total for the meet. You are not ranked among competitors who completed all three lifts. This is the critical risk of opening too heavy: if you miss your first squat attempt, you only have two more chances to complete a legal lift before being eliminated from the total. Consistent strategy strongly favors conservative openers that guarantee a successful first attempt at each lift.</p>
+  <p>The order of attempts within a flight (the group of lifters attempting together) is determined by the weight on the bar — lighter attempts go first. You can pass an attempt (submit a "pass" card) to give yourself more rest, but passing your third attempt means you're done with that lift regardless of why.</p>
+
+  <h2>Attempt selection strategy</h2>
+  <p>Experienced meet competitors follow established attempt selection principles:</p>
+  <ul>
+    <li><strong>Opener: 92–94% of training max.</strong> The opener should be a "morning warm-up" — a weight you could execute with perfect technique on your worst day. Its purpose is to get on the board, not to impress anyone. Missing your opener is one of the most avoidable mistakes in powerlifting.</li>
+    <li><strong>Second attempt: training max or slightly above.</strong> After a smooth opener, your second attempt is typically your established training maximum or 2–5% above it. This should be a heavy-but-confident lift, not a grinder.</li>
+    <li><strong>Third attempt: competitive or PR.</strong> The third attempt is where you go for a true personal record or a total-winning number. If your second attempt moved well, a 2–5% jump is typical. If your second was a grinder, hold the weight or take a smaller jump.</li>
+  </ul>
+  <p>These percentages are based on your <em>training max</em>, not your calculator-estimated maximum. If you haven't recently performed a near-maximal single in training, you're guessing at your openers — which increases bomb-out risk significantly.</p>
 
   <h2>Comparing across weight classes</h2>
-  <p>A raw total doesn't tell you how strong someone is relative to bodyweight. For cross-weight comparison, use the <a href="/wilks-calculator">Wilks Calculator</a> or DOTS, IPF GL, or other coefficient-based scores. See the <a href="/guides/wilks-score-explained">Wilks score explained</a> guide for more detail.</p>
+  <p>A raw total doesn't tell you how strong someone is relative to their bodyweight. A 308-lb lifter totaling 1,800 lbs and a 132-lb lifter totaling 900 lbs cannot be directly compared by total alone — the 308-lb lifter's total is higher, but so is their bodyweight. For cross-weight-class comparison, normalized scoring systems are used:</p>
+  <ul>
+    <li><strong>Wilks Score:</strong> The original normalized powerlifting score, developed by Robert Wilks. Uses a fifth-degree polynomial coefficient based on bodyweight to produce a single score. Our <a href="/wilks-calculator">Wilks calculator</a> computes this automatically from your total and bodyweight. See also our <a href="/guides/wilks-score-explained">Wilks score guide</a>.</li>
+    <li><strong>DOTS Score:</strong> A newer coefficient system favored by some federations as an improvement on the original Wilks formula. Tends to produce flatter scores across the bodyweight spectrum.</li>
+    <li><strong>IPF GL Points:</strong> The International Powerlifting Federation's current scoring system, updated regularly based on current meet data. Used at IPF-affiliated meets (including USAPL in the United States) for best lifter awards.</li>
+  </ul>
+  <p>Which score to use depends on your federation and context. For informal comparisons and goal-setting, Wilks is the most widely recognized and understood. For USAPL competition, IPF GL is the official score.</p>
+
+  <h2>Equipment divisions</h2>
+  <p>Powerlifting competition is divided into equipment categories that are kept separate in all scoring:</p>
+  <ul>
+    <li><strong>Raw:</strong> Lifter wears a singlet, belt (optional), knee sleeves (optional in most federations), and wrist wraps. No supportive suits or shirts. Raw totals are directly comparable within the raw division only.</li>
+    <li><strong>Raw with wraps:</strong> Same as raw but allows knee wraps rather than sleeves. Wraps can add 30–100 lbs to the squat, which is why wrapped and un-wrapped raw are sometimes tracked separately.</li>
+    <li><strong>Equipped / single-ply / multi-ply:</strong> Lifter wears a squat suit, bench shirt, and deadlift suit made of supportive materials that assist the lifts. Equipped totals are significantly higher than raw — a world-class equipped total is not comparable to a world-class raw total.</li>
+  </ul>
+  <p>When calculating and discussing your total, always note the equipment division. A 2,000-lb equipped total and a 2,000-lb raw total represent entirely different levels of absolute strength expression.</p>
+
+  <h2>Tracking progress toward total goals</h2>
+  <p>Most lifters find it useful to set a target total and work backward to the per-lift contributions needed. If your goal is a 1,500-lb raw total at 198 lbs, and your current lifts are squat 520, bench 320, deadlift 580 (total: 1,420), you're 80 lbs short. A balanced improvement of 25–30 lbs per lift over 6–12 months of focused training is a realistic incremental target. This kind of total-based goal setting keeps the three lifts in balance and prevents the common trap of over-investing in one lift at the expense of others.</p>
+
+  <p>Return to the <a href="/">1RM calculator</a>, convert your total using the <a href="/wilks-calculator">Wilks calculator</a>, or read the <a href="/guides/peaking-block-strength">peaking block guide</a> to prepare for a meet.</p>
 </BaseLayout>

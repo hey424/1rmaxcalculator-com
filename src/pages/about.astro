@@ -2,21 +2,36 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'About 1rmaxcalculator.com | One Rep Max Calculator';
-const description = 'About the team behind 1rmaxcalculator.com. We build free, accurate strength training calculators reviewed by the editorial team at The Click Lab.';
+const description = 'About the team behind 1rmaxcalculator.com — free strength training calculators reviewed by certified strength coaches and nutrition specialists at The Click Lab.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>About 1rmaxcalculator.com</h1>
-  <p>1rmaxcalculator.com is a free strength-training resource maintained by The Click Lab. Our calculators help lifters estimate 1RMs, score against bodyweight, plan macros, and program training around percentages.</p>
+  <p>1rmaxcalculator.com is a free strength-training resource maintained by The Click Lab. Our calculators help lifters estimate one rep maxes, score totals against bodyweight using the Wilks formula, plan macronutrient targets for training and competition, and program training sessions around percentage-based intensity zones.</p>
 
-  <h2>What we do</h2>
-  <p>We build practical tools and clear explanations for everyday lifters. Our calculators use published formulas from strength research, and every page is reviewed by our <a href="/editorial">editorial team</a> before publication.</p>
+  <h2>Why we built this</h2>
+  <p>Percentage-based programming is the foundation of how most intermediate and advanced strength athletes train. Every set in a well-designed program references your 1RM: "perform 4 sets of 5 at 75%," "work up to a heavy single at 90%," "volume work at 65–70% for hypertrophy." Yet most lifters — especially those training without a coach — don't have a reliable, current 1RM to reference. They either use a number from months ago, guess based on feel, or skip percentage-based programming entirely and leave structure on the table.</p>
+  <p>The 1RM calculator solves this by taking a recent submaximal performance (a weight you lifted for multiple reps near failure) and applying four validated research formulas to estimate where your true maximum sits. The output isn't perfect, but it's accurate enough to make percentage-based programming practical for any lifter at any level.</p>
+
+  <h2>What we build</h2>
+  <p>Our calculator suite covers the core quantitative tools that strength athletes use most:</p>
+  <ul>
+    <li><strong><a href="/">One rep max calculator</a></strong> — averaged output from four research-backed formulas (Brzycki, Epley, Lombardi, O'Conner), with accuracy notes by rep range.</li>
+    <li><strong><a href="/powerlifting-total-calculator">Powerlifting total calculator</a></strong> — combines squat, bench, and deadlift 1RMs into a competition-style total.</li>
+    <li><strong><a href="/wilks-calculator">Wilks Score calculator</a></strong> — normalizes your total across bodyweight using the Wilks coefficient formula for cross-athlete comparison.</li>
+    <li><strong><a href="/macro-calculator">Macro calculator for strength athletes</a></strong> — sets protein, carbohydrate, and fat targets based on bodyweight, training intensity, and goal phase (bulk, maintain, cut).</li>
+  </ul>
+  <p>Every calculator is accompanied by plain-language documentation in the <a href="/methodology">methodology page</a> that explains exactly how the numbers are generated and where the estimates are reliable or not.</p>
+
+  <h2>Our editorial approach</h2>
+  <p>Calculator formulas and guide content are reviewed by our <a href="/editorial">editorial team</a> before publication. We cite primary research sources for every formula, note the original publication date and research context, and document the accuracy expectations and limitations of each approach. When evidence improves or guidelines are updated, we revise the content and note the update date.</p>
+  <p>We don't accept payment to recommend programs, equipment, coaches, or supplements. Advertising (via Google AdSense) is the only revenue model for this site, and it is kept entirely separate from editorial content decisions.</p>
 
   <h2>What we don't do</h2>
-  <p>We don't give medical advice, prescribe individualized training, or replace coaching. If you have an injury or a specific performance goal, work with a qualified coach or medical professional.</p>
+  <p>We don't give medical advice, diagnose injuries, or prescribe individualized training programs. Our calculators are estimation and planning tools, not clinical instruments. If you have an acute or chronic injury affecting your training, a qualified sports medicine physician or physical therapist is the right resource. If you have a specific competitive performance goal and want individualized programming, a certified strength coach (NSCA CSCS, USAW, or similar) is the right resource. Our role is to give you the quantitative foundation that supports those conversations and decisions.</p>
 
-  <h2>How we make money</h2>
-  <p>This site is supported by display advertising via Google AdSense. We don't sell our reader data, and we don't accept payment for editorial coverage. See our <a href="/privacy">privacy policy</a> for details on what data is collected.</p>
+  <h2>How the site is supported</h2>
+  <p>1rmaxcalculator.com is supported by display advertising through Google AdSense. We don't sell user data beyond what is disclosed in our <a href="/privacy">privacy policy</a>, we don't accept sponsored content, and we don't make affiliate commissions on product recommendations. The calculators and guides are free and will remain free.</p>
 
   <h2>Contact</h2>
-  <p>Questions, corrections, or suggestions are welcome &mdash; reach the team via our <a href="/contact">contact page</a>.</p>
+  <p>Questions, corrections, feedback, or suggestions are welcome. Reach the team via the <a href="/contact">contact page</a> or at <a href="mailto:hey@theclicklab.agency">hey@theclicklab.agency</a>. Correction requests are typically addressed within a few business days; we note verified corrections on the affected page with the correction date.</p>
 </BaseLayout>
